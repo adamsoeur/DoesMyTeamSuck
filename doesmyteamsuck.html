@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>SPORTS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      //JQuery script tag
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">    
+        <a class="navbar-brand" href="#">Does My Team Suck?</a>
+      </div>    
+          <div class="form-group">
+            <input id="inputID" type="text" class="form-control" style="width: 250px;" placeholder="Enter NFL Team Abbreviation">
+          </div>
+          <button id = "buttonID" type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#myModal">Does My Team Suck?</button>
+      </div>
+  </nav>
+  <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Team History</h4>
+                </div>
+                <div class="modal-body">
+                  <p id="nflTeam">NFL Team</p>
+                  <p id="teamRecord">0-0</p>
+                  <table id="modalScores">
+                    <tr>
+                      <th>Matchup</th>
+                      <th>Result</th>
+                    </tr>
+         
+          <tbody>
+          </tbody>
+          
+          </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+  </div>
+  
+  <body>
+
+  <div class="w3-sidebar w3-bar-block w3-light-gray w3-border w3-animate-left" style="width:12%"> 
+      <div class="w3-container w3-grey">
+        <h4>NFL Teams</h4>
+      </div>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NE">NE<img src="assets/images/ne.png" class="logo" alt="NE" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="OAK">OAK<img src="assets/images/oak.png" class="logo" alt="OAK" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="SEA">SEA<img src="assets/images/sea.png" class="logo" alt="SEA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NYG">NYG<img src="assets/images/nyg.png" class="logo" alt="NYG" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DEN">DEN<img src="assets/images/den.png" class="logo" alt="DEN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="PHI">PHI<img src="assets/images/phi.png" class="logo" alt="PHI" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="MIN">MIN<img src="assets/images/min.png" class="logo" alt="MIN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="WSH">WSH<img src="assets/images/wsh.png" class="logo" alt="WSH" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DET">DET<img src="assets/images/det.png" class="logo" alt="DET" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="ATL">ATL<img src="assets/images/atl.png" class="logo" alt="ATL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="HOU">HOU<img src="assets/images/hou.png" class="logo" alt="HOU" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CLE">CLE<img src="assets/images/cle.png" class="logo" alt="CLE" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CAR">CAR<img src="assets/images/car.png" class="logo" alt="CAR" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="LAC">LAC<img src="assets/images/lac.png" class="logo" alt="LAC" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NO">NO<img src="assets/images/no.png" class="logo" alt="NO" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NYJ">NYJ<img src="assets/images/nyj.png" class="logo" alt="NYJ" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="BAL">BAL<img src="assets/images/bal.png" class="logo" alt="BAL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="KC">KC<img src="assets/images/kc.png" class="logo" alt="KC" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="BUF">BUF<img src="assets/images/buf.png" class="logo" alt="BUF" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="MIA">MIA<img src="assets/images/mia.png" class="logo" alt="MIA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="TB">TB<img src="assets/images/tb.png" class="logo" alt="TB" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="IND">IND<img src="assets/images/ind.png" class="logo" alt="IND" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="TEN">TEN<img src="assets/images/ten.png" class="logo" alt="TEN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="JAX">JAX<img src="assets/images/jax.png" class="logo" alt="JAX" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="PIT">PIT<img src="assets/images/pit.png" class="logo" alt="PIT" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CIN">CIN<img src="assets/images/cin.png" class="logo" alt="CIN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CHI">CHI<img src="assets/images/chi.png" class="logo" alt="CHI" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="GB">GB<img src="assets/images/gb.png" class="logo" alt="GB" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DAL">DAL<img src="assets/images/dal.png" class="logo" alt="DAL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="SF">SF<img src="assets/images/SF.png" class="logo" alt="SF" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="LA">LA<img src="assets/images/la.png" class="logo" alt="LA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="ARI">ARI<img src="assets/images/ari.png" class="logo" alt="ARI" align="right"></a>
+
+  </div>
+
+  <div style="margin-left:15%">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  <div class="container">
+
+  <h1><b>Live Scores</b></h1>
+  <div id="liveUpdate">"Team1: 0 - Team2: 0"
+  </div>
+
+    <div class="row">
+      <div class="col-md-3">
+         <table id="currentScore1">
+          <tr>
+            <th>Offense</th>
+            <th>Quarter</th>
+            <th>Time</th>
+            <th>Down</th>
+            <th>Scrimmage</th>
+            
+            
+          </tr>
+         
+          <tbody>
+          </tbody>
+          
+          </table>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div id="map"></div>
+        </div>
+        </div>
+      
+      <br><br>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  </body>
+      
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD86TJtRJ3IXwLs8DsefYX0oV7K5Lh5pXQ&libraries=places&callback=initMap" async defer>
+        //Google Maps Script Tag
+      </script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      //JQuery script tag
+  </script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script>
+   var abbreviationArray = ["NE", "OAK", "SEA", "NYG", "DEN", "PHI", "MIN", "WSH", "DET", "ATL", "HOU", "CLE", "CAR", "LAC", "NO", "NYJ", "BAL", "KC", "BUF", "MIA", "TB", "IND", "TEN", "JAX", "PIT", "CIN", "CHI", "GB", "DAL", "SF", "LA", "ARI"];
+      $("#buttonID").on("click", function() { 
+        var b = $("#inputID").val();  
+        var validator = abbreviationArray.indexOf(b);
+        //$("#NE").on("click", function() { 
+          //var x = document.getElementById("NE").value;
+          console.log(validator);
+    
+    if (validator !== -1) {
+        console.log("B is defined!");
+      }
+  });
+
+</script>
+
+
+
+ <script>
+  $("a").on("click", function() { 
+        var a = $(this).text();
+        //$("#NE").on("click", function() { 
+          //var x = document.getElementById("NE").value;
+         // console.log(a);
+       console.log(a);
+     
+                
+          //full game schedule validation testing
+        $.ajax
+          ({
+          type: "GET",
+          url: "https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/full_game_schedule.json?team="+ a +"&date=20170924",
+          dataType: 'json',
+          async: false,
+          headers: {
+          "Authorization": "Basic " + btoa("samir0bajaj" + ":" + "UTCoding")
+              }
+          })
+          .done(function(response){
+              //console.log(response.fullgameschedule.gameentry.date);
+              console.log(response.fullgameschedule)
+              var v=response.fullgameschedule.gameentry;
+              if(v === undefined)
+                {
+                  console.log("There is not a game today with that team.");
+                  }
+              else {
+                console.log(v)
+                var thing = (response.fullgameschedule.gameentry[0].date);
+                var thing2 = (response.fullgameschedule.gameentry[0].homeTeam.Abbreviation);
+                var thing3 = (response.fullgameschedule.gameentry[0].awayTeam.Abbreviation);
+                var formatThing = moment(thing).format("YYYYMMDD");         
+
+
+            $.ajax
+              ({
+              type: "GET",
+              url: "https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/game_boxscore.json?gameid=20170924-" + thing3 + "-" + thing2,
+              dataType: 'json',
+              async: false,
+              headers: {
+              "Authorization": "Basic " + btoa("samir0bajaj" + ":" + "UTCoding")
+                  }
+              })      
+               .done(function(response){
+                  console.log(response.gameboxscore.quarterSummary.quarter[0].awayScore);
+                  var awayBoxScoreTotal = parseInt(response.gameboxscore.quarterSummary.quarter[0].awayScore) + parseInt(response.gameboxscore.quarterSummary.quarter[1].awayScore) + parseInt(response.gameboxscore.quarterSummary.quarter[2].awayScore) + parseInt(response.gameboxscore.quarterSummary.quarter[3].awayScore)
+                  console.log(awayBoxScoreTotal);
+                  var homeBoxScoreTotal = parseInt(response.gameboxscore.quarterSummary.quarter[0].homeScore) + parseInt(response.gameboxscore.quarterSummary.quarter[1].homeScore) + parseInt(response.gameboxscore.quarterSummary.quarter[2].homeScore) + parseInt(response.gameboxscore.quarterSummary.quarter[3].homeScore)
+                  console.log(homeBoxScoreTotal);
+                  var homeTeamBoxScore = response.gameboxscore.game.homeTeam.Abbreviation;
+                  var awayTeamBoxScore = response.gameboxscore.game.awayTeam.Abbreviation;
+                    $("#liveUpdate").text(homeTeamBoxScore + ": " + homeBoxScoreTotal + " " + "/" + " " + awayTeamBoxScore + ": " + awayBoxScoreTotal)
+
+
+
+
+            });
+
+
+
+
+
+          $.ajax
+          ({
+          type: "GET",
+          url: "https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/game_playbyplay.json?gameid="+ formatThing +"-" + thing3 + "-" + thing2,
+          dataType: 'json',
+          async: false,
+          headers: {
+          "Authorization": "Basic " + btoa("samir0bajaj" + ":" + "UTCoding")
+              }
+          })
+          .done(function(response){
+             for (var z = 90; 110 > z; z++) {
+              //var playDown = response.gameplaybyplay.plays.play[z].currentDown;
+             // var offenseTeam = response.gameplaybyplay.plays.play[z].kickingPlay;
+              var kickingPlay = response.gameplaybyplay.plays.play[z].kickingPlay;
+              var passingPlay = response.gameplaybyplay.plays.play[z].passingPlay;
+              var rushingPlay = response.gameplaybyplay.plays.play[z].rushingPlay;
+              //var offense = kickingPlay.kickingTeamAbbreviation, passingPlay.teamAbbreviation, rushingPlay.teamAbbreviation
+              var down = response.gameplaybyplay.plays.play[z].currentDown;
+              var gameTime = response.gameplaybyplay.plays.play[z].time;
+              var lineOfScrimmage = response.gameplaybyplay.plays.play[z].lineOfScrimmage.yardLine;
+              var sideOfScrimmage = response.gameplaybyplay.plays.play[z].lineOfScrimmage.team;    
+              if (z>0) {
+                var lastGameTime = response.gameplaybyplay.plays.play[z-1].time;
+              }
+              var gameQuarter = response.gameplaybyplay.plays.play[z].quarter;
+              //var gameQuarter = response.gameplaybyplay.plays.play[z];
+              if (kickingPlay != undefined) {var offense = kickingPlay.kickingTeamAbbreviation;}
+              if (passingPlay != undefined) {var offense = passingPlay.teamAbbreviation;}
+              if (rushingPlay != undefined) {var offense = rushingPlay.teamAbbreviation;}
+              //if (lineOfScrimmage != undefined) {var definedLOS = lineOfScrimmage;}
+              //if (sideOfScrimmage != undefined) {var definedSOS = sideOfScrimmage;}
+              if (down != undefined){console.log("Current Down: " + down);}
+              if (gameTime != undefined && gameQuarter !=undefined) {console.log("Quarter: " + gameQuarter + " Game Time: " + gameTime);}
+                //var timeOfPlay = gameTime-lastGameTime;
+                //var start = moment.utc(lastGameTime, "mm:ss");
+                //var end = moment.utc(gameTime, "mm:ss");
+               
+                //var formattedTimeOfPlay = moment.utc(timeOfPlay).format("mm:ss");
+                
+                $("#currentScore1").append("<tr><td>" + offense + "</td>" + "<td>" + gameQuarter + "</td>" + "<td>" + gameTime + "</td>" + "<td>" + down + "</td>" + "<td>" + sideOfScrimmage + " " + lineOfScrimmage + "</td></tr>");
+              
+              
+               // if(playDown != undefined){
+                //  console.log("Offense Team " + offenseTeam + " Down " + response.gameplaybyplay.plays.play[z].currentDown);
+                //  }
+              //console.log(response.gameplaybyplay.plays.play[0].kickingPlay);
+              //console.log(response.gameplaybyplay.plays.play[1].kickingPlay);
+              //console.log(response.gameplaybyplay.plays.play[2].kickingPlay);
+              //console.log(response.gameplaybyplay.plays.play[3].kickingPlay);
+              //console.log(response.gameplaybyplay.game.plays.play[0].lineOfScrimage.team);
+              //console.log(response.gameplaybyplay.game.plays.play[0].lineOfScrimage.yardLine);
+            }
+          });
+          }});
+      });
+      </script>
+
+
+
+      <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
+        
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 30.2871, lng: -97.7292},
+            zoom: 14
+          });
+          infoWindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: {lat: 30.2871, lng: -97.7292},
+            radius: 2000,
+            type: ['liquor_store']
+          }, callback);
+          
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              infoWindow.setPosition(pos);
+              infoWindow.setContent('Location found.');
+              infoWindow.open(map);
+              map.setCenter(pos);
+            }, function() {
+              handleLocationError(true, infoWindow, map.getCenter());
+            });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+          
+        }
+        
+        function callback(results, status) {
+          console.log('running callback provided to google');
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              createMarker(results[i]);
+            }
+          }
+        }
+        function createMarker(place) {
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+          });
+          
+          google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                'Address: ' + place.vicinity + '</div>');
+            infoWindow.open(map, this);
+          });
+        }
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+          infoWindow.open(map);
+        }
+      </script>
+
+<!-- 
+
+  <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+        var map, infoWindow;
+        
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 30.2871, lng: -97.7292},
+            zoom: 15
+          });
+          infoWindow = new google.maps.InfoWindow();
+          var service = new google.maps.places.PlacesService(map);
+          service.nearbySearch({
+            location: {lat: 30.2871, lng: -97.7292},
+            radius: 4000,
+            type: ['night_club']
+          }, callback);
+          
+          // Try HTML5 geolocation.
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+              infoWindow.setPosition(pos);
+              infoWindow.setContent('Location found.');
+              infoWindow.open(map);
+              map.setCenter(pos);
+            }, function() {
+              handleLocationError(true, infoWindow, map.getCenter());
+            });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+          
+        }
+        
+        function callback(results, status) {
+          console.log('running callback provided to google');
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (var i = 0; i < results.length; i++) {
+              createMarker(results[i]);
+            }
+          }
+        }
+        function createMarker(place) {
+          var placeLoc = place.geometry.location;
+          var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+          });
+          
+          google.maps.event.addListener(marker, 'click', function() {
+            infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+                'Address: ' + place.vicinity + '</div>');
+            infoWindow.open(map, this);
+          });
+        }
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+          infoWindow.open(map);
+        }
+      </script>
+
+
+
+-->
+
+
+
+  </html>

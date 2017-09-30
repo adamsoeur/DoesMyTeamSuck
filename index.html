@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>SPORTS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      //JQuery script tag
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">    
+        <a class="navbar-brand" href="#">Does My Team Suck?</a>
+      </div>    
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" style="width: 250px;" placeholder="Enter NFL Team Abbreviation">
+          </div>
+          <button type="button" class="btn btn-info btn-default" data-toggle="modal" data-target="#myModal">Does My Team Suck?</button>
+        </form>         
+      </div>
+  </nav>
+  <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Team History</h4>
+                </div>
+                <div class="modal-body">
+                  <p id="nflTeam">NFL Team</p>
+                  <p id="teamRecord">0-0</p>
+                  <table id="modalScores">
+                    <tr>
+                      <th>Matchup</th>
+                      <th>Result</th>
+                    </tr>
+         
+          <tbody>
+          </tbody>
+          
+          </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+  </div>
+  <body>
+
+  <div class="w3-sidebar w3-bar-block w3-light-gray w3-border w3-animate-left" style="width:12%"> 
+      <div class="w3-container w3-grey">
+        <h4>NFL Teams</h4>
+      </div>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NE">NE<img src="assets/images/ne.png" class="logo" alt="NE" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="OAK">OAK<img src="assets/images/oak.png" class="logo" alt="OAK" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="SEA">SEA<img src="assets/images/sea.png" class="logo" alt="SEA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NYG">NYG<img src="assets/images/nyg.png" class="logo" alt="NYG" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DEN">DEN<img src="assets/images/den.png" class="logo" alt="DEN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="PHI">PHI<img src="assets/images/phi.png" class="logo" alt="PHI" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="MIN">MIN<img src="assets/images/min.png" class="logo" alt="MIN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="WSH">WSH<img src="assets/images/wsh.png" class="logo" alt="WSH" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DET">DET<img src="assets/images/det.png" class="logo" alt="DET" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="ATL">ATL<img src="assets/images/atl.png" class="logo" alt="ATL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="HOU">HOU<img src="assets/images/hou.png" class="logo" alt="HOU" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CLE">CLE<img src="assets/images/cle.png" class="logo" alt="CLE" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CAR">CAR<img src="assets/images/car.png" class="logo" alt="CAR" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="LAC">LAC<img src="assets/images/lac.png" class="logo" alt="LAC" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NO">NO<img src="assets/images/no.png" class="logo" alt="NO" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="NYJ">NYJ<img src="assets/images/nyj.png" class="logo" alt="NYJ" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="BAL">BAL<img src="assets/images/bal.png" class="logo" alt="BAL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="KC">KC<img src="assets/images/kc.png" class="logo" alt="KC" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="BUF">BUF<img src="assets/images/buf.png" class="logo" alt="BUF" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="MIA">MIA<img src="assets/images/mia.png" class="logo" alt="MIA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="TB">TB<img src="assets/images/tb.png" class="logo" alt="TB" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="IND">IND<img src="assets/images/ind.png" class="logo" alt="IND" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="TEN">TEN<img src="assets/images/ten.png" class="logo" alt="TEN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="JAX">JAX<img src="assets/images/jax.png" class="logo" alt="JAX" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="PIT">PIT<img src="assets/images/pit.png" class="logo" alt="PIT" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CIN">CIN<img src="assets/images/cin.png" class="logo" alt="CIN" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="CHI">CHI<img src="assets/images/chi.png" class="logo" alt="CHI" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="GB">GB<img src="assets/images/gb.png" class="logo" alt="GB" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="DAL">DAL<img src="assets/images/dal.png" class="logo" alt="DAL" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="SF">SF<img src="assets/images/SF.png" class="logo" alt="SF" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="LA">LA<img src="assets/images/la.png" class="logo" alt="LA" align="right"></a>
+    <a href="#" class="w3-bar-item w3-button w3-border-bottom" id="ARI">ARI<img src="assets/images/ari.png" class="logo" alt="ARI" align="right"></a>
+
+  </div>
+
+  <div style="margin-left:15%">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  <div class="container">
+
+  <h1><b>Live Scores</b></h1>
+  <div id="liveUpdate">"Team1: 0 - Team2: 0"
+  </div>
+
+    <div class="row">
+      <div class="col-md-3">
+         <table id="currentScore1">
+          <tr>
+            <th>Offense</th>
+            <th>Quarter</th>
+            <th>Time</th>
+            <th>Down</th>
+            <th>Scrimmage</th>
+            
+            
+          </tr>
+         
+          <tbody>
+          </tbody>
+          
+          </table>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div id="map"></div>
+        </div>
+        </div>
+      
+      <br><br>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  </body>
+      
+      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD86TJtRJ3IXwLs8DsefYX0oV7K5Lh5pXQ&libraries=places&callback=initMap" async defer>
+        //Google Maps Script Tag
+      </script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+      //JQuery script tag
+  </script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js">...

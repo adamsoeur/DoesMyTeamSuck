@@ -1,0 +1,74 @@
+#currentScore1{
+   margin: 50px;
+   margin-left: 5px;
+   padding: 10px;
+}
+
+#modalScores{
+  width: 50%;
+  
+}
+
+#nflTeam{
+  text-align: center;
+}
+
+#teamRecord{
+  text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+table{
+  border: 2px solid black;
+}
+
+th{
+  height: 50px;
+  background-color: white;
+  color: black;
+}
+
+th,td{
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #ADD8E6;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+.logo {
+  height: 20px;
+  width: 20px;
+
+}
+
+#map {
+        height: 400px;
+        width: 400px;
+       
+        margin: 50px;
+        margin-left: 20px;
+
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 70%;
+        margin: 0;
+        padding: 0;
+      }
+
+
+.container{
+  background-image: url(assets/images/vertical-waves.png)
+}
